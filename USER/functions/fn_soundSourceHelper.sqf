@@ -33,7 +33,7 @@ _helper addMPEventHandler ["MPHit", {
   private _pos = getPos _target;
   deleteVehicle (_target getVariable ["soundSource", objNull]);
 
-  [_target] remoteExecCall ["homecoming_fnc_brokenRadio", 0, true];
+  [_target] remoteExecCall ["blackhawk_fnc_brokenRadio", 0, true];
 
 }];
 

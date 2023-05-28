@@ -31,7 +31,7 @@ _car setPilotLight false;
 ];
 
 private _source = createSoundSource ["sfxsound16", [0,0,0], [], 0];
-[_source, _car, false] call homecoming_fnc_soundSourceHelper;
+[_source, _car, false] call blackhawk_fnc_soundSourceHelper;
 
 /*
 {

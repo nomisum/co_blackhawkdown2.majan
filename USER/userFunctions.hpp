@@ -3,7 +3,9 @@
 *   Ist in CfgFunctions included.
 */
 
-class homecoming
+#include "grad_grinder\CfgFunctions.hpp"
+
+class blackhawk
    {
        class all
        {

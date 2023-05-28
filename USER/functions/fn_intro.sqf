@@ -8,7 +8,7 @@
 
     [_waitCondition,{
         if (!didJIP) then {
-            [] spawn homecoming_fnc_startIntro;
+            // [] spawn blackhawk_fnc_startIntro;
         } else {
             cutText ["", "BLACK IN", 3];
             3 fadeSound 1;

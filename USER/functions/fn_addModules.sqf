@@ -38,7 +38,7 @@
             if (count _vehicles > 0) then {
                 _vehicles params ["_vehicle"];
                 if (_vehicle getVariable ["suicideCarInit", false]) then {
-                    [_vehicle] remoteExec ["homecoming_fnc_suicideCarCalculatePath", 2];
+                    [_vehicle] remoteExec ["blackhawk_fnc_suicideCarCalculatePath", 2];
                 };
             };
         }];
@@ -52,7 +52,7 @@
             if (count _vehicles > 0) then {
                 _vehicles params ["_vehicle"];
                 if (_vehicle getVariable ["suicideCarInit", false]) then {
-                    [_vehicle] remoteExec ["homecoming_fnc_suicideCarCalculatePath", 2];
+                    [_vehicle] remoteExec ["blackhawk_fnc_suicideCarCalculatePath", 2];
                 };
             };
         }];
@@ -66,7 +66,7 @@
             if (count _vehicles > 0) then {
                 _vehicles params ["_vehicle"];
                 if (_vehicle getVariable ["suicideCarInit", false]) then {
-                    [_vehicle] remoteExec ["homecoming_fnc_suicideCarCalculatePath", 2];
+                    [_vehicle] remoteExec ["blackhawk_fnc_suicideCarCalculatePath", 2];
                 };
             };
         }];
@@ -83,7 +83,7 @@
       _position = ASLToAGL _position;
 
 
-      [_position] remoteExec ["homecoming_fnc_suicideCar", 2];
+      [_position] remoteExec ["blackhawk_fnc_suicideCar", 2];
 
     }] call zen_custom_modules_fnc_register;
 
@@ -94,7 +94,7 @@
       params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
       _position = ASLToAGL _position;
 
-      [_objectUnderCursor] remoteExec ["homecoming_fnc_addZeusShake", _objectUnderCursor];
+      [_objectUnderCursor] remoteExec ["blackhawk_fnc_addZeusShake", _objectUnderCursor];
 
     }] call zen_custom_modules_fnc_register;
 
@@ -135,7 +135,7 @@
       _radio setPos _position;
 
       private _source = createSoundSource ["sfxsound19", _position, [], 0];
-      [_source, _radio, false] call homecoming_fnc_soundSourceHelper;
+      [_source, _radio, false] call blackhawk_fnc_soundSourceHelper;
       
       {
         _x addCuratorEditableObjects [[_radio], false];
@@ -153,7 +153,7 @@
       _radio setPos _position;
 
       private _source = createSoundSource ["sfxsound20", _position, [], 0];
-      [_source, _radio, false] call homecoming_fnc_soundSourceHelper;
+      [_source, _radio, false] call blackhawk_fnc_soundSourceHelper;
       
       {
         _x addCuratorEditableObjects [[_radio], false];
@@ -171,7 +171,7 @@
       _radio setPos _position;
 
       private _source = createSoundSource ["sfxsound10", _position, [], 0];
-      [_source, _radio, false] call homecoming_fnc_soundSourceHelper;
+      [_source, _radio, false] call blackhawk_fnc_soundSourceHelper;
       
       {
         _x addCuratorEditableObjects [[_radio], false];
@@ -189,7 +189,7 @@
       _radio setPos _position;
 
       private _source = createSoundSource ["sfxsound11", _position, [], 0];
-      [_source, _radio, false] call homecoming_fnc_soundSourceHelper;
+      [_source, _radio, false] call blackhawk_fnc_soundSourceHelper;
       
       {
         _x addCuratorEditableObjects [[_radio], false];
@@ -210,7 +210,7 @@
       _radio setPos _position;
 
       private _source = createSoundSource ["sfxsound18", _position, [], 0];
-      [_source, _radio, false] call homecoming_fnc_soundSourceHelper;
+      [_source, _radio, false] call blackhawk_fnc_soundSourceHelper;
       
       {
         _x addCuratorEditableObjects [[_radio], false];
@@ -230,7 +230,7 @@
       _radio setPos _position;
 
       private _source = createSoundSource ["sfxsound16", _position, [], 0];
-      [_source, _radio, false] call homecoming_fnc_soundSourceHelper;
+      [_source, _radio, false] call blackhawk_fnc_soundSourceHelper;
       
       {
         _x addCuratorEditableObjects [[_radio], false];
@@ -257,7 +257,7 @@
       params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
       _position = ASLToAGL _position;
 
-      [abuserPilot, abuserPisser] remoteExec ["homecoming_fnc_pilotAnim", 2];
+      [abuserPilot, abuserPisser] remoteExec ["blackhawk_fnc_pilotAnim", 2];
 
     }] call zen_custom_modules_fnc_register;
 
@@ -268,7 +268,7 @@
       params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
       _position = ASLToAGL _position;
 
-      [] remoteExec ["homecoming_fnc_fog", [0,-2] select isDedicated];
+      [] remoteExec ["blackhawk_fnc_fog", [0,-2] select isDedicated];
 
     }] call zen_custom_modules_fnc_register;
 
@@ -289,7 +289,7 @@
       params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
       _position = ASLToAGL _position;
 
-      [_position] remoteExecCall ["homecoming_fnc_createMusicCarrier", 2];
+      [_position] remoteExecCall ["blackhawk_fnc_createMusicCarrier", 2];
 
     }] call zen_custom_modules_fnc_register;
 
@@ -315,7 +315,7 @@
       _position = ASLToAGL _position;
 
       private _source = createSoundSource ["sfxsound14", _position, [], 0];
-      [_source, _position] call homecoming_fnc_soundSourceHelper;
+      [_source, _position] call blackhawk_fnc_soundSourceHelper;
 
     }] call zen_custom_modules_fnc_register;
 

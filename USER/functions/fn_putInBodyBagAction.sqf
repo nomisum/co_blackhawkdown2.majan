@@ -6,7 +6,7 @@ private _action = [
    "convertToBodybag",
    "Wrap in bodybag",
    "\A3\Ui_f\data\GUI\Rsc\RscDisplayArsenal\uniform_ca.paa",
-    {[_target] call homecoming_fnc_putInBodyBag; }, {true}
+    {[_target] call blackhawk_fnc_putInBodyBag; }, {true}
        
   
 ] call ace_interact_menu_fnc_createAction;

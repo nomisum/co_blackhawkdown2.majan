@@ -1,3 +1,3 @@
 params ["_vehicle"];
 
-[_vehicle] remoteExec ["homecoming_fnc_handleDamageVehicleLocal", 0, true];
+[_vehicle] remoteExec ["blackhawk_fnc_handleDamageVehicleLocal", 0, true];

@@ -8,7 +8,7 @@ _driver moveInDriver _car;
 
 _car setPos _position;
 
-[_car] call homecoming_fnc_suicideCarInit;
+[_car] call blackhawk_fnc_suicideCarInit;
 
 _car setPilotLight false;
 
@@ -37,7 +37,7 @@ _car addEventHandler ["Hit", {
 
     if (_count > 15 || !canMove _unit) then {
         [_unit] setVariable ["killedByHit", true, true];
-        [_unit] call homecoming_fnc_suicideCarExplode;
+        [_unit] call blackhawk_fnc_suicideCarExplode;
     };
 }];
 
@@ -48,6 +48,6 @@ _driver addEventHandler ["Killed", {
     private _killedByHit = _car getVariable ["killedByHit", false];
 
     if (!_killedByHit) then {
-        [_car] call homecoming_fnc_suicideCarExplode;
+        [_car] call blackhawk_fnc_suicideCarExplode;
     };
 }];

@@ -62,7 +62,7 @@ diwako_dui_main_toggled_off = true;
             date select 3 >= 20
         }, {
             setTimeMultiplier 1;
-            [] remoteExec ["homecoming_fnc_fog", [0,-2] select isDedicated];
+            [] remoteExec ["blackhawk_fnc_fog", [0,-2] select isDedicated];
 
         }] call CBA_fnc_waitUntilAndExecute;
 

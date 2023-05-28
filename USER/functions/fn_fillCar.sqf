@@ -15,7 +15,7 @@ if (isServer) then {
     _vehicle addMagazineCargoGlobal ["1Rnd_SmokeBlue_Grenade_shell", 10]; 
     _vehicle addMagazineCargoGlobal ["1Rnd_HE_Grenade_shell", 10]; 
     _vehicle addMagazineCargoGlobal ["SatchelCharge_Remote_Mag", 5]; 
-    [_vehicle] call homecoming_fnc_handleDamageVehicle; 
+    [_vehicle] call blackhawk_fnc_handleDamageVehicle; 
     _vehicle addItemCargoGlobal ["itemGPS", 1];
     _vehicle addWeaponCargoGlobal ["rhs_weap_M136", 3];
 };

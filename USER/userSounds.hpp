@@ -3,6 +3,8 @@
 *   Ist in CfgSounds included.
 */
 
+#include "grad_grinder\cfgSounds.hpp"
+
 class buzz
 {
     name = "buzz";
