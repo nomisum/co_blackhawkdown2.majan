@@ -1,11 +1,11 @@
-params ["_identifier"];
+params ["_identifier", "_unit"];
 
 private _data = missionNameSpace getVariable [_identifier, [[0,0,0], [0,0,0], objNull, [0,0,0]]];
 waitUntil {count _data > 0};
 
 [{
 	params ["_args", "_handle"];
-	_args params ["_identifier"];
+	_args params ["_identifier", "_unit"];
 	
 	if (!isGameFocused) exitWith {};
 
@@ -17,7 +17,7 @@ waitUntil {count _data > 0};
 	};
 	if (isNull _intersectObject) exitWith {};
 
-	[_posASL, _surfaceNormal, _intersectObject] spawn grad_grinder_fnc_sparkClient;
-	[_posASL, _surfaceNormal, _intersectObject, _finalPoint] call grad_grinder_fnc_lightClient;
+	[_posASL, _surfaceNormal, _intersectObject, _unit] spawn grad_grinder_fnc_sparkClient;
+	[_posASL, _surfaceNormal, _intersectObject, _finalPoint, _unit] call grad_grinder_fnc_lightClient;
 	
-}, 0, [_identifier]] call CBA_fnc_addPerFrameHandler;
+}, 0, [_identifier, _unit]] call CBA_fnc_addPerFrameHandler;

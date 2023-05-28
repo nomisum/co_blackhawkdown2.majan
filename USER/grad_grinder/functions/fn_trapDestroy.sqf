@@ -1,5 +1,7 @@
 params ["_position"];
 
+private _dummy = "#lightpoint" createVehicleLocal _position;
+
 private _yaw = getDir cursorObject + 100; private _pitch = 300; private _roll = 330;  
 private _vector = [  
 	[sin _yaw * cos _pitch, cos _yaw * cos _pitch, sin _pitch],  
@@ -35,3 +37,6 @@ private _vector = [
 	[[0.5,0.5,0.5,0], [0.7,0.7,0.7,0.5], [0.9,0.9,0.9,0]],  
 	[0,1,0,1,0,1],  
 	0.2, 0.2, "", "", _dummy, 0, true, 0.2, [], _vector];
+
+
+deleteVehicle _dummy;

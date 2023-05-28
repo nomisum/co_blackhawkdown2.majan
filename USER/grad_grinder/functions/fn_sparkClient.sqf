@@ -1,4 +1,4 @@
-params ["_posASL", "_surfaceNormal", "_intersectObject"];
+params ["_posASL", "_surfaceNormal", "_intersectObject", "_unit"];
 
 private _duration = 0.01 + random 0.1;
 private _amount = 0.001 + random 0.01;
@@ -16,8 +16,3 @@ _spark setParticleParams [
 _spark setDropInterval _amount; 
 sleep _duration;
 deleteVehicle _spark;
-
-if (isNull (_intersectObject getVariable ["grad_grinder_sound", objNull])) then {
-	private _sound = _intersectObject say3d (selectRandom ["grinder_active", "grinder_active2"]);
-	_intersectObject setVariable ["grad_grinder_sound", _sound];
-};

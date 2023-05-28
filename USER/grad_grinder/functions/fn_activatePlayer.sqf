@@ -1,7 +1,7 @@
 player setVariable ["grad_grinder_active", true, true];
 
 private _identifier = format ["grad_grinder_%1_%2", position player, CBA_missionTime];
-[_identifier] remoteExec ["grad_grinder_fnc_activateClients"];
+[_identifier, player] remoteExec ["grad_grinder_fnc_activateClients"];
 
 [player, 150] call TFAR_ai_hearing_fnc_revealInArea;
 
@@ -43,7 +43,8 @@ private _identifier = format ["grad_grinder_%1_%2", position player, CBA_mission
 		if (_newHealth < 0.1) exitWith {
 			
 			[getPos _intersectObject] call grad_grinder_fnc_trapDestroy;
-			playSound3D [getMissionPath "USER\grad_grinder\sounds\grinding_destroy.ogg", objNull, false, getPos _intersectObject];
+			[player, "grinder_destroy"] remoteExec ["say3d"];
+
 			deleteVehicle _intersectObject;
 			[_handle] call CBA_fnc_removePerFrameHandler;
 
@@ -57,7 +58,23 @@ private _identifier = format ["grad_grinder_%1_%2", position player, CBA_mission
 		private _finalPoint = _posASL vectorAdd (_normalizedDirection vectorMultiply _distance);
 
 		missionNameSpace setVariable [_identifier, [_posASL, _surfaceNormal, _intersectObject, _finalPoint], true];
+
+		private _soundActive = player getVariable ["grad_grinder_soundActive", objNull];
+
+		if (isNull _soundActive) then {
+			deleteVehicle (player getVariable ["grad_grinder_soundIdle", objNull]);
+			
+			private _activeSound = createSoundSource ["sfxgrinderactive", player, [], 0];
+			_activeSound attachTo [player, [0,0,0], "righthand", true];
+			player setVariable ["grad_grinder_soundActive", _activeSound];
+		};
+		
 	} else {
 		missionNameSpace setVariable [_identifier, [[0,0,0], [0,0,0], objNull, [0,0,0]], true];
+
+		private _soundActive = player getVariable ["grad_grinder_soundActive", objNull];
+		if (!isNull _soundActive) then {
+			deleteVehicle _soundActive;
+		};
 	};
 }, 0, [_identifier]] call CBA_fnc_addPerFrameHandler;
